@@ -147,6 +147,9 @@ class MainActivity : AppCompatActivity() {
                if(numeroActual=="0"){
                    numeroActual="0"
                }
+               else{
+                   numeroActual=numeroActual+"0"
+               }
            }else{
                numeroActual=numeroActual+"O"
            }
@@ -178,7 +181,7 @@ class MainActivity : AppCompatActivity() {
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA+numeroB).toString())
-                numeroActual="0"
+                numeroActual=(numeroA+numeroB).toString()
                 operacionActual=-1
             }
 
@@ -186,7 +189,7 @@ class MainActivity : AppCompatActivity() {
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA-numeroB).toString())
-                numeroActual="0"
+                numeroActual=(numeroA-numeroB).toString()
                 operacionActual=-1
             }
 
@@ -194,7 +197,7 @@ class MainActivity : AppCompatActivity() {
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA*numeroB).toString())
-                numeroActual="0"
+                numeroActual=(numeroA*numeroB).toString()
                 operacionActual=-1
             }
 
@@ -205,7 +208,7 @@ class MainActivity : AppCompatActivity() {
                       error.text="No se puede dividir entre 0, borre lo realizado"
                   }else{
                       total.setText((numeroA/numeroB).toString())
-                      numeroActual="0"
+                      numeroActual=(numeroA/numeroB).toString()
                       operacionActual=-1
                   }
             }
