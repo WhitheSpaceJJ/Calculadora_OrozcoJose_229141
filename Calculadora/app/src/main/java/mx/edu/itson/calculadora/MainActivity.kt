@@ -172,32 +172,32 @@ class MainActivity : AppCompatActivity() {
             if(operacionActual==-1){
                 val mensaje2="Aun no ha seleccionado una operacion"
                 error.text = mensaje2
-
             }
+
             if(operacionActual==1){
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA+numeroB).toString())
                 numeroActual="0"
-
                 operacionActual=-1
             }
+
             if(operacionActual==2){
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA-numeroB).toString())
                 numeroActual="0"
-
                 operacionActual=-1
             }
+
             if(operacionActual==3){
                 numeroA=total.text.substring(0,total.text.length-1).toDouble()
                 numeroB=numero.text.toString().toDouble()
                 total.setText((numeroA*numeroB).toString())
                 numeroActual="0"
-
                 operacionActual=-1
             }
+
               if(operacionActual==4){
                   numeroA=total.text.substring(0,total.text.length-1).toDouble()
                   numeroB=numero.text.toString().toDouble()
@@ -206,12 +206,11 @@ class MainActivity : AppCompatActivity() {
                   }else{
                       total.setText((numeroA/numeroB).toString())
                       numeroActual="0"
+                      operacionActual=-1
                   }
-                operacionActual=-1
             }
-
-
         }
+
         borrar.setOnClickListener {
             numero.setText("")
             total.setText("")
@@ -233,44 +232,37 @@ class MainActivity : AppCompatActivity() {
                 total.setText(numeroActual.plus("+") )
                 operacionActual = 1
                 numero.setText("0")
-            }else
-                if(numero.toString()=="0"){
-                    total.setText(numeroActual.plus("+") )
-                    operacionActual=1
-
-                }
-            numeroActual="0"
+                numeroActual="0"
+            }else{
+                total.setText(numeroActual.plus("+") )
+                operacionActual = 1
+                numero.setText("0")
+            }
         }
         menos.setOnClickListener {
             if(operacionActual==-1) {
                 total.setText(numeroActual.plus("-") )
                 operacionActual = 2
                 numero.setText("0")
-            }else
-                if(numero.toString()=="0"){
-                    total.setText(numeroActual.plus("-") )
-                    operacionActual=2
-
-                }
-            numeroActual="0"
-
+                numeroActual="0"
+            }else{
+                total.setText(numeroActual.plus("-") )
+                operacionActual = 2
+                numero.setText("0")
+            }
         }
 
         multiplicar.setOnClickListener {
-
             if(operacionActual==-1) {
                 total.setText(numeroActual.plus("*") )
                 operacionActual=3
                 numero.setText("0")
+                numeroActual="0"
+            }else{
+                total.setText(numeroActual.plus("*") )
+                operacionActual=3
+                numero.setText("0")
             }
-            else
-                if(numero.toString()=="0"){
-                    total.setText(numeroActual.plus("*") )
-                    operacionActual=3
-
-                }
-            numeroActual="0"
-
         }
 
         dividir.setOnClickListener {
@@ -278,12 +270,12 @@ class MainActivity : AppCompatActivity() {
                 total.setText(numeroActual.plus("/") )
                 operacionActual = 4
                 numero.setText("0")
-            }else
-                if(numero.toString()=="0"){
-                    total.setText(numeroActual.plus("/"))
-                    operacionActual=4
-                }
-            numeroActual="0"
+                numeroActual="0"
+            }else{
+                total.setText(numeroActual.plus("/") )
+                operacionActual = 4
+                numero.setText("0")
+            }
         }
     }
 
