@@ -175,19 +175,38 @@ class MainActivity : AppCompatActivity() {
 
             }
             if(operacionActual==1){
-                error.text=numero.text
+                numeroA=total.text.substring(0,total.text.length-1).toDouble()
+                numeroB=numero.text.toString().toDouble()
+                total.setText((numeroA+numeroB).toString())
+                numeroActual="0"
+
                 operacionActual=-1
             }
             if(operacionActual==2){
-                error.text=numero.text
+                numeroA=total.text.substring(0,total.text.length-1).toDouble()
+                numeroB=numero.text.toString().toDouble()
+                total.setText((numeroA-numeroB).toString())
+                numeroActual="0"
+
                 operacionActual=-1
             }
             if(operacionActual==3){
-                error.text=numero.text
+                numeroA=total.text.substring(0,total.text.length-1).toDouble()
+                numeroB=numero.text.toString().toDouble()
+                total.setText((numeroA*numeroB).toString())
+                numeroActual="0"
+
                 operacionActual=-1
             }
               if(operacionActual==4){
-                  error.text=numero.text
+                  numeroA=total.text.substring(0,total.text.length-1).toDouble()
+                  numeroB=numero.text.toString().toDouble()
+                  if(numeroA==0.0){
+                      error.text="No se puede dividir entre 0, borre lo realizado"
+                  }else{
+                      total.setText((numeroA/numeroB).toString())
+                      numeroActual="0"
+                  }
                 operacionActual=-1
             }
 
@@ -201,6 +220,7 @@ class MainActivity : AppCompatActivity() {
             operacionActual=-1;
         }
     }
+
     fun operacion():Unit{
         val total: TextView =findViewById(R.id.txTotal)
         val numero: TextView =findViewById(R.id.txNumero)
